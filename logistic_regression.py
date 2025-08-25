@@ -63,3 +63,15 @@ plt.xlabel('Age')
 plt.ylabel('Estimated Salary')
 plt.legend()
 plt.show()
+from sklearn.preprocessing import StandardScaler
+dataset1=pd.read_csv(r"C:\Users\konth\Downloads\final1.csv")
+d2=dataset1.copy()
+dataset1=dataset1.iloc[:, [3,4]].values
+from sklearn.preprocessing import StandardScaler
+sc=StandardScaler()
+M=sc.fit_transform(dataset1)
+y_pred1=pd.DataFrame()
+d2['y_pred1']=classifier.predict(M)
+d2.to_csv('final2.csv')
+import os 
+os.getcwd()
